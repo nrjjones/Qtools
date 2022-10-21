@@ -7,7 +7,11 @@
 openend(oe, x, pnum)
 }
 \arguments{
-\item{pnum}{}
+\item{oe}{A dataframe of OE responses}
+
+\item{x}{A col number}
+
+\item{pnum}{A project number to use for exported files in format "P9999"}
 }
 \value{
 

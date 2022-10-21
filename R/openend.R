@@ -2,9 +2,9 @@
 #'
 #' Exports comments and formats file name nicely for delivery.  Use with a for loop to run through all OE vars.
 #'
-#' @param oe
-#' @param x
-#' @param pnum
+#' @param oe A dataframe of OE responses
+#' @param x A col number
+#' @param pnum A project number to use for exported files in format "P9999"
 #'
 #' @return
 #' @export

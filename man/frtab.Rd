@@ -18,6 +18,6 @@ A nicely formatted table
 Creates a nicely formatted frequency table with percentage and n in parentheses.
 }
 \examples{
-frtab(airquality, Month)
+frtab(infert, Education)
 
 }
