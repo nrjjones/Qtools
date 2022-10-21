@@ -23,6 +23,7 @@ Qtools includes the following functions:
 - frtab(df, x) - Creates a frequency table of variable x from data df with format % (N).  
 - ctab(df, x, y) - Creates a crosstab of variables x by y from data df with format % (N).  
 - cbtab(df, n) - Create a frequency table of col n from data df with format % (N).  
+- catatab(df, x, stub) - Creates a CATA frequency for vars that contain "x" (eg "Q15" to make a table of Q15_1 to Q15_5) and removes stub text from the question.  
 - codebk(x, varlist) - Creates a codebook with file name x of frtabs from varlist.  
 - openend(oe, n, pnum) - Exports comments from oe for col n and adds pnum to file name.  Use with a for loop for all OE vars.  
 
@@ -44,6 +45,9 @@ ctab(infert, Education, induced)
 
 # Codebook crosstab - Uses col number: 1=education.
 cbtab(infert, 1)
+
+# CATA frequency table that shows % selected and removes question stub text
+catatab(df, "Q15", "What is your race? Selected option ")
 
 # Create a codebook from a Qualtrics data file
 

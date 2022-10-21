@@ -43,7 +43,7 @@ codebk <- function(x, df, varlist) {
     cat(tmp1)
     cat("\n\n")
     cat("```{r , echo=FALSE, message=FALSE} \n\n")
-    cat("cbtab( ",i," ) \n")
+    cat("cbtab( df, ",i," ) \n")
     cat("``` \n\n")
   }
 
