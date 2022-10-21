@@ -48,16 +48,17 @@ cbtab(infert, 1)
 # Create a codebook from a Qualtrics data file
 
 ### Load data from SPSS formatted file
+
 df <- read_spss("./EXAMPLE SURVEY DATA.sav")
 
 ### Remove paradata and keep survey data
-df <- df %>%
-  select(
-    csid = ExternalReference, Q_A:Q_Z
-  )
+### Replace A and Z with first and last variable
+
+df <- df %>% select(csid = ExternalReference, Q_A:Q_Z)
 
 ### Create a list of all variables and check their type.
 ### Character variables start with an 'A'
+
 varlist <- tibble(
   var = names(df),
   labels = map_chr(1:ncol(df), function(x) attr(df[[x]], "label")),
@@ -66,6 +67,7 @@ varlist <- tibble(
 )
 
 ### Separate OE vars 
+
 oev <- varlist %>% filter(oe == TRUE)
 varlist <- varlist %>% filter(oe == FALSE)
 
@@ -73,10 +75,19 @@ oe <- df %>% select(oev$var)
 df <- df %>% select(varlist$var)
 
 ### Apply variable and value labels
+
 df <- as_factor(df)
 
 ### Specify file name for frequency report and create the template
+
 codebk("Example Data Frequency Report.qmd", df, varlist)
+
+### Export comments to separate files with date stamp
+### Example exported file name: P9999 Q45_TEXT Responses 2022-10-12.csv
+
+for(i in 1:length(names(oe))) {
+  openend(oe, i, "P9999")
+}
 
 
 ```
