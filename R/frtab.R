@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' frtab(infert, Education)
+#' frtab(infert, education)
 #'
 frtab <- function(df, x) {
   tmp <- df %>%

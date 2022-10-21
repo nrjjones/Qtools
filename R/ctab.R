@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' ctab(infert, Education, induced)
+#' ctab(infert, education, parity)
 ctab <- function(df, x, y) {
 
   tmp <- df %>%

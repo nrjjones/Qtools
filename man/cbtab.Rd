@@ -21,6 +21,6 @@ Creates a nicely formatted frequency table with percentage and n in parentheses.
 Here's a whole bunch of other things
 }
 \examples{
-# Table of infert data variable Education in column 1
+# Table of infert data variable education in column 1
 cbtab(infert, 1)
 }

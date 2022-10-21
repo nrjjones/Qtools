@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples
-#' # Table of infert data variable Education in column 1
+#' # Table of infert data variable education in column 1
 #' cbtab(infert, 1)
 
 cbtab <- function(df, x) {

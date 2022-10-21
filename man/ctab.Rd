@@ -20,5 +20,5 @@ A nicely formatted table of x by y with output formatted as \% (N)
 Title
 }
 \examples{
-ctab(infert, Education, induced)
+ctab(infert, education, parity)
 }
