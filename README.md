@@ -31,5 +31,3 @@ Qtools includes the following functions:
 
 **codebk(x, varlist)** - Creates a codebook with file name x of frtabs from varlist.  
 
-**openend(oe, n, pnum)** - Exports comments from oe for col n and adds pnum to file name.  Use with a for loop for all OE vars.  
-
