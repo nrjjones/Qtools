@@ -1,14 +1,15 @@
 #' Title
 #'
 #' @param x A file name to export report to
+#' @param df A data file
 #' @param varlist A list of variable names and labels
 #'
 #' @return
 #' @export
 #'
 #' @examples
-#' codebk("P9999 Frequency Report.qmd", varlist)
-codebk <- function(x, varlist) {
+#' codebk("P9999 Frequency Report.qmd", df, varlist)
+codebk <- function(x, df, varlist) {
 
   rpt <- x
   # Report generation
@@ -42,7 +43,7 @@ codebk <- function(x, varlist) {
     cat(tmp1)
     cat("\n\n")
     cat("```{r , echo=FALSE, message=FALSE} \n\n")
-    cat("frtab1( ",i," ) \n")
+    cat("cbtab( ",i," ) \n")
     cat("``` \n\n")
   }
 

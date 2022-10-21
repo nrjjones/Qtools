@@ -4,10 +4,12 @@
 \alias{codebk}
 \title{Title}
 \usage{
-codebk(x, varlist)
+codebk(x, df, varlist)
 }
 \arguments{
 \item{x}{A file name to export report to}
+
+\item{df}{A data file}
 
 \item{varlist}{A list of variable names and labels}
 }
@@ -18,5 +20,5 @@ codebk(x, varlist)
 Title
 }
 \examples{
-codebk("P9999 Frequency Report.qmd", varlist)
+codebk("P9999 Frequency Report.qmd", df, varlist)
 }

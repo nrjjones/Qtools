@@ -28,10 +28,12 @@ Qtools includes the following functions:
 
 
 ``` r
+libary(tidyverse)
+library(knitr)
+library(haven)
 library(Qtools)
-## basic example code
 
-# Set up raw, out, and pst folders
+# Creates raw, out, and pst folders
 new_proj()
 
 # Basic frequency tab
@@ -40,8 +42,35 @@ frtab(infert, Education)
 # Basic crosstab
 ctab(infert, Education, induced)
 
-# Codebook crosstab - Uses col number: 1=Education.
+# Codebook crosstab - Uses col number: 1=education.
 cbtab(infert, 1)
+
+# Create a codebook from a Qualtrics data file
+
+df <- read_spss("./EXAMPLE SURVEY DATA.sav")
+
+df <- df %>%
+  select(
+    csid = ExternalReference, Q_A:Q_Z
+  )
+
+varlist <- tibble(
+  var = names(df),
+  labels = map_chr(1:ncol(df), function(x) attr(df[[x]], "label")),
+  typ = map_chr(1:ncol(df), function(x) attr(df[[x]], "format.spss")),
+  oe = str_detect(typ, "A")
+)
+
+oev <- varlist %>% filter(oe == TRUE)
+varlist <- varlist %>% filter(oe == FALSE)
+
+oe <- df %>% select(oev$var)
+df <- df %>% select(varlist$var)
+
+df <- as_factor(df)
+
+codebk("Example Data Frequency Report.qmd", df, varlist)
+
 ```
 
 

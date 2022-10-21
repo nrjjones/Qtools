@@ -15,5 +15,6 @@ Suggests:
     knitr,
     rmarkdown,
     dplyr,
-    stringr
+    stringr,
+    magrittr
 VignetteBuilder: knitr
