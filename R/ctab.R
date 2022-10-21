@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' ctab(df, Q2, Q5)
+#' ctab(infert, Education, induced)
 ctab <- function(df, x, y) {
 
   tmp <- df %>%

@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' frtab(airquality, Month)
+#' frtab(infert, Education)
 #'
 frtab <- function(df, x) {
   tmp <- df %>%

@@ -11,10 +11,10 @@
 #' @export
 #'
 #' @examples
-#' # Table of airquality data variable Month in column 5
-#' frtab1(airquality, 5)
+#' # Table of infert data variable Education in column 1
+#' cbtab(infert, 1)
 
-frtab1 <- function(df, x) {
+cbtab <- function(df, x) {
   tmp <- df %>%
     select(names(df)[x]) %>%
     ftable() %>%
