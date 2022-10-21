@@ -30,5 +30,19 @@ Qtools includes the following functions:
 ``` r
 library(Qtools)
 ## basic example code
+
+# Set up raw, out, and pst folders
+new_proj()
+
+# Basic frequency tab
+frtab(infert, Education)
+
+# Basic crosstab
+ctab(infert, Education, induced)
+
+# Codebook crosstab - Uses col number: 1=Education.
+cbtab(infert, 1)
 ```
+
+
 
