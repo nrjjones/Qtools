@@ -22,7 +22,7 @@ ctab <- function(df, x, y) {
     ) %>%
     select(-Freq, -pct) %>%
     pivot_wider(
-      everything(),
+      id_cols = everything(),
       names_from = {{y}},
       values_from = `Percent (N)`
     ) %>%
